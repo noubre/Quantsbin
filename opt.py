@@ -1,14 +1,14 @@
 import quantsbin.derivativepricing as qbdp
 
-equity_option1 = qbdp.EqOption(option_type='Put', strike=22000.0, expiry_date='20230331', expiry_type='European')
+equity_option1 = qbdp.EqOption(option_type='Put', strike=28000.0, expiry_date='20230331', expiry_type='European')
 
-print(equity_option1.list_models())
+# print(equity_option1.list_models())
 
 # print(equity_option1.payoff(55))
 
 # eq1_payoff = qbdp.Plotting(equity_option1, 'payoff', x_axis_range=[15000, 30000]).line_plot()
 
-eq1_engine = equity_option1.engine(model='BSM', pricing_date='20230227', spot0=23517.0, rf_rate=0.05, volatility=0.557)
+eq1_engine = equity_option1.engine(model='BSM', pricing_date='20230227', spot0=28200.0, rf_rate=0.04, volatility=0.688)
 
 print(eq1_engine.valuation())
 
